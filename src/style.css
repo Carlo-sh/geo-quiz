@@ -1,0 +1,151 @@
+:root {
+  --bg-primary: #121e30;
+  --bg-hover: #dfeb88;
+  --text-color: #e3e5e8;
+  --duration: 10;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Roboto, sans-serif;
+}
+
+@font-face {
+  font-family: Fonarto;
+  src: url(./fonts/fonarto.regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/roboto.regular.ttf);
+}
+
+#title {
+  font-family: Fonarto, sans-serif;
+  font-size: 48px;
+  padding: 1rem;
+}
+
+#btn-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.fade-in {
+  animation: fadeIn 3s forwards;
+}
+
+.flags-container {
+  align-items: center;
+}
+
+#guess-title {
+  padding-bottom: 2rem;
+  font-style: italic;
+}
+
+.mode-btn {
+  height: 70px;
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  text-transform: capitalize;
+  font-size: 1.7rem;
+  padding: 1rem;
+}
+
+.mode-btn:hover {
+  cursor: pointer;
+  background-color: var(--text-color);
+  color: var(--bg-primary);
+}
+
+footer p {
+  padding: 1rem;
+}
+
+/* - */
+
+#round-flags {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#round-flags img {
+  padding: 0 1rem;
+}
+
+#round-flags img:hover {
+  background-color: var(--bg-hover);
+}
+
+#score-container {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 250px);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  transform: translateY(-50%);
+}
+
+#lives-container {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  height: 50px;
+}
+
+#lives-wrapper {
+  display: flex;
+  column-gap: 12px;
+}
+
+#guess-flag {
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+}
+
+.time-bar {
+  overflow: hidden;
+  height: 16px;
+  width: 320px;
+}
+
+.time-bar div {
+  height: 16px;
+  animation: roundtime calc(var(--duration) * 1s) linear forwards;
+  transform-origin: left center;
+  background: linear-gradient(to bottom, #238c3f, #095c1f);
+}
+
+@keyframes roundtime {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
