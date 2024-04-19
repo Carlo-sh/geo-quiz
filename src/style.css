@@ -93,14 +93,26 @@ footer p {
   background-color: var(--bg-hover);
 }
 
-#score-container {
+#score-container,
+#highscore-container {
   position: absolute;
-  top: 50%;
-  left: calc(50% + 250px);
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+}
+
+#score-container {
+  top: 50%;
+  left: calc(50% + 250px);
   transform: translateY(-50%);
+}
+
+#highscore-container {
+  top: 20%;
+  left: 10%;
+  border: 1px solid var(--text-color);
+  border-radius: 8px;
+  padding: 1rem;
 }
 
 #lives-container {
@@ -148,4 +160,8 @@ footer p {
   100% {
     opacity: 1;
   }
+}
+
+#game-over {
+  color: gold;
 }
