@@ -1,5 +1,5 @@
 import "./style.css";
-import countries from "../node_modules/world_countries_lists/data/countries/en/world.json";
+import countries from "../src/data/world.json";
 
 const flagBtn = document.getElementById("flag-mode");
 const centralDiv = document.getElementById("btn-container");
@@ -28,7 +28,7 @@ const generateFlagGrid = () => {
   roundCountries.forEach(c => {
     const flagImg = new Image();
     const flagIndex = countries.findIndex(f => f.name === c);
-    flagImg.src = `../node_modules/world_countries_lists/data/flags/128x128/${countries[flagIndex].alpha2}.png`;
+    flagImg.src = `../src/data/flags/${countries[flagIndex].alpha2}.png`;
     flagImg.setAttribute("name", `${countries[flagIndex].name}`);
     flagsDiv.appendChild(flagImg);
   });
