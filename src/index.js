@@ -231,3 +231,5 @@ const populateHighscore = result => {
     localStorage.setItem("highscoreItem", JSON.stringify(highscores));
   }
 };
+
+//
